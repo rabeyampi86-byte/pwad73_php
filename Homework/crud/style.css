@@ -1,0 +1,305 @@
+:root {
+    color-scheme: light;
+    --ink: #1d332e;
+    --muted: #080808;
+    --paper: #f1f4f1;
+    --surface: #ffffff;
+    --line: #dbe3de;
+    --green: #0b7ac4;
+    --green-dark: #0b7ac4;
+    --green-pale: #e9f2ed;
+    --terracotta: #b85d43;
+    --terracotta-pale: #fbefeb;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-width: 320px;
+    background: var(--paper);
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    padding: 58px 24px 72px;
+    color: var(--ink);
+    background-color: var(--paper);
+    background-image: radial-gradient(rgba(29, 51, 46, 0.055) 0.7px, transparent 0.7px);
+    background-size: 18px 18px;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    line-height: 1.5;
+}
+
+body::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--green) 0 76%, var(--terracotta) 76% 100%);
+    content: "";
+}
+
+h3 {
+    width: min(100%, 1080px);
+    margin: 0 auto 22px;
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+}
+
+h3::after {
+    display: block;
+    width: 44px;
+    height: 3px;
+    margin: 12px auto 0;
+    border-radius: 2px;
+    background: var(--terracotta);
+    content: "";
+}
+
+body > a[href="new_product.php"] {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin: 0 max(calc((100% - 1080px) / 2), 0px) 18px;
+    padding: 0 16px;
+    border: 1px solid var(--green);
+    border-radius: 4px;
+    color: #fff;
+    background: var(--green);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 150ms ease, border-color 150ms ease;
+}
+
+body > a[href="new_product.php"]::before {
+    content: "+";
+    margin-right: 8px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+body > a[href="new_product.php"]:hover {
+    border-color: var(--green-dark);
+    background: var(--green-dark);
+}
+
+body > a[href="new_product.php"]:focus-visible,
+td a[href^="product_delete.php"]:focus-visible,
+body > a[href="index.php"]:focus-visible,
+form input:focus-visible {
+    outline: 3px solid rgba(184, 93, 67, 0.42);
+    outline-offset: 3px;
+}
+
+body > br {
+    display: none;
+}
+
+table {
+    width: min(100%, 1080px);
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-spacing: 0;
+    border-radius: 5px;
+    background: var(--surface);
+    box-shadow: 0 8px 24px rgba(15, 26, 23, 0.06);
+    text-align: left;
+}
+
+th,
+td {
+    padding: 14px 18px;
+    background: #dfeaf7;
+    border-bottom: 1px solid var(--line);
+}
+
+th {
+    color: #ffffff;
+    background: var(--green-dark);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+td {
+    color: var(--ink);
+    font-size: 14px;
+}
+
+tr:nth-child(even) td {
+    background: #fbfcfb;
+}
+
+td:first-child {
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+}
+
+tr:last-child td {
+    border-bottom: 0;
+}
+
+tbody tr:hover td,
+table tr:hover td {
+    background: var(--green-pale);
+}
+
+td .action-icon {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin-right: 4px;
+    padding: 7px;
+    border-radius: 4px;
+    color: var(--green-dark);
+    background: var(--green-pale);
+    vertical-align: middle;
+    text-decoration: none;
+}
+
+td .action-icon svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+}
+
+td .action-icon:hover {
+    color: #fff;
+    background: var(--green-dark);
+}
+
+td .delete-action {
+    color: var(--terracotta);
+    background: var(--terracotta-pale);
+}
+
+td .delete-action:hover {
+    background: var(--terracotta);
+}
+
+.success-message {
+    width: min(100%, 480px);
+    margin: 0 auto 14px;
+    padding: 12px 16px;
+    border: 1px solid #b9dfc2;
+    border-radius: 4px;
+    color: #236b38;
+    background: #e8f5eb;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+form {
+    display: grid;
+    gap: 14px;
+    width: min(100%, 480px);
+    margin: 0 auto;
+    padding: 28px;
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--green);
+    border-radius: 5px;
+    background: var(--surface);
+    box-shadow: 0 8px 24px rgba(138, 205, 189, 0.06);
+}
+
+form br {
+    display: none;
+}
+
+form input[type="text"] {
+    width: 100%;
+    min-height: 48px;
+    padding: 0 14px;
+    border: 1px solid #cbd7d0;
+    border-radius: 4px;
+    outline: none;
+    color: var(--ink);
+    background: #fcfdfc;
+    font: inherit;
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+form input[type="text"]::placeholder {
+    color: #101111;
+}
+
+form input[type="text"]:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(23, 102, 83, 0.12);
+}
+
+form input[type="submit"] {
+    min-height: 46px;
+    margin-top: 4px;
+    border: 0;
+    border-radius: 4px;
+    color: #fff;
+    background: var(--green);
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    transition: background-color 150ms ease, box-shadow 150ms ease;
+}
+
+form input[type="submit"]:hover {
+    background: var(--green-dark);
+}
+
+body > a[href="index.php"] {
+    display: block;
+    width: min(100%, 480px);
+    margin: 18px auto 0;
+    color: var(--green);
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+    body {
+        padding: 38px 16px 52px;
+    }
+
+    h3 {
+        margin-bottom: 18px;
+        font-size: 28px;
+    }
+
+    body > a[href="new_product.php"] {
+        margin-bottom: 14px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    th,
+    td {
+        padding: 12px 14px;
+    }
+
+    form {
+        padding: 21px;
+    }
+}
