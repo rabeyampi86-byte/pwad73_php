@@ -16,19 +16,21 @@
         <tr>
             <th>Product ID</th>
             <th>Product Name</th>
-            <th>Description</th>
             <th>Price</th>
             <th>Quantity</th>
-            <th>Action</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Actions</th>
         </tr>
     <?php 
     while($row = $rawData->fetch_assoc()){ ?>
        <tr>
         <td><?php echo $row['id']; ?></td>
         <td><?php echo $row['name']; ?></td>
-        <td><?php echo $row['description']; ?></td>
         <td><?php echo $row['price']; ?></td>
         <td><?php echo $row['quantity']; ?></td>
+        <td><?php echo $row['description']; ?></td>
+        <td><?php echo $row['status']; ?></td>
         <td>
             
           <a class="delete-icon" href="product_edit.php?id=<?php echo $row['id']; ?>">&#9998; | </a>  
