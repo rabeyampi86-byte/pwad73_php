@@ -1,0 +1,21 @@
+<?php
+class Fruit {
+  public $name;
+  public $color;
+
+  function __construct($name, $color) {
+    $this->name = $name;
+    $this->color = $color;
+    //echo "I am ready<br>";
+    echo "I am ready<hr>";
+  }
+
+  function __destruct() {
+    //echo "Name: " . $this->name . ". Color: " . $this->color .".<br>";
+    echo "Tata Bye Bye<br>";
+  }
+}
+
+$apple = new Fruit('Apple', 'Red');
+//$banana = new Fruit('Banana', 'Yellow');
+?>
