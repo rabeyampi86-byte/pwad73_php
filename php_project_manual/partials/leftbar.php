@@ -196,7 +196,7 @@
                     </li>
                     <li><a class="has-arrow" href="javascript:;"><span class="material-symbols-outlined">arrow_right</span>Cover</a>
                       <ul>
-                        <li><a href="auth-cover-login.html" target="_blank"><span class="material-symbols-outlined">arrow_right</span>Login</a></li>
+                        <li><a href="dashboard.php" target="_blank"><span class="material-symbols-outlined">arrow_right</span>Login</a></li>
                         <li><a href="auth-cover-reset-password.html" target="_blank"><span class="material-symbols-outlined">arrow_right</span>Register</a></li>
                         <li><a href="auth-cover-forgot-password.html" target="_blank"><span class="material-symbols-outlined">arrow_right</span>Forgot Password</a></li>
                         <li><a href="auth-cover-reset-password.html" target="_blank"><span class="material-symbols-outlined">arrow_right</span>Reset Password</a></li>
@@ -329,7 +329,7 @@
                    <img src="assets/images/avatars/01.png" alt="">
                 </div>
                 <div class="user-info">
-                  <h5 class="mb-0 user-name">Jhon Maxwell</h5>
+                  <h5 class="mb-0 user-name"><?php echo $_SESSION['name']; ?></h5>
                   <p class="mb-0 user-designation">UI Engineer</p>
                 </div>
               </div>
@@ -357,7 +357,7 @@
                 <li>
                   <div class="dropdown-divider mb-0"></div>
                 </li>
-                <li><a class="dropdown-item" href="javascript:;"><span class="material-symbols-outlined me-2">
+                <li><a class="dropdown-item" href="logout.php"><span class="material-symbols-outlined me-2">
                   logout
                   </span><span>Logout</span></a>
                 </li>
