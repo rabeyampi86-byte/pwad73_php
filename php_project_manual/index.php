@@ -67,15 +67,28 @@
               session_start();
               if (isset($_POST['login'])) {
                 extract($_POST);
-                $password = md5($password);
+                $password = sha1($password);
                 include_once 'dbconfig.php';
 
-                $result = $conn->query("SELECT * FROM `login` WHERE email = '$email' AND password = '$password'");
+                $result = $conn->query("SELECT * FROM `users` WHERE email = '$email' AND password = '$password'");
                 $row = $result->fetch_assoc();
                 if ($result->num_rows > 0) {
+                  session_start();
                   $_SESSION['email'] = $email;
                   $_SESSION['name'] = $row['name'];
-                  header("Location: dashoard.php");
+                  $_SESSION['role'] = $row['role'];
+                  if($row['role']=='admin'){
+                    $_SESSION['url'] = 'dashboard_admin.php';
+                    header("Location: dashboard_admin.php");
+                  }
+                  else if($row['role']=='customer'){
+                    $_SESSION['url'] = 'dashboard_customer.php';
+                    header("Location: dashboard_customer.php");
+                  }
+                  else if($row['role']=='staff'){
+                    $_SESSION['url'] = 'dashboard_staff.php';
+                    header("Location: dashboard_staff.php");
+                  }
                   exit;
                 } else {
                  echo 
