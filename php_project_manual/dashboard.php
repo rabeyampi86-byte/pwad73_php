@@ -129,7 +129,7 @@ print_r($_SESSION);
                 </div>
               </div>
               <div class="card-body">
-                   <img class="img img-fluid" src="assets/images/wel.jpg" alt="">
+                   <img class="img img-fluid" src="assets/images/welcome.jpg" alt="">
               </div>
             </div>
           </div>

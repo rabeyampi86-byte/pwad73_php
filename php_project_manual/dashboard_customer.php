@@ -26,7 +26,7 @@ if($_SESSION['role'] !='customer'){
      <!--end header-->
 
      <!--start sidebar-->
-      <?php include 'partials/leftbar.php' ?>
+      <?php include 'partials/leftbar_customer.php' ?>
      <!--end sidebar-->
 
     <!--start main content-->
@@ -134,7 +134,7 @@ if($_SESSION['role'] !='customer'){
                 </div>
               </div>
               <div class="card-body">
-                   <img class="img img-fluid" src="assets/images/wel.jpg" alt="">
+                   <img class="img img-fluid" src="assets/images/customer.jfif" alt="">
               </div>
             </div>
           </div>
